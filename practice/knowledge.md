@@ -1,0 +1,2 @@
+- at the eof fread return less readed element then required
+- 
