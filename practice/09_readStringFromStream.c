@@ -19,4 +19,5 @@ int main()
     // read the first line
     fscanf(fds, "%127[^\n]\n", buffer);
     fprintf(stdout, "Reading: %s \n", buffer);
+    fclose(fds);
 }

@@ -10,7 +10,28 @@
 #include <stdlib.h>
 #include <unistd.h>
 
-int main(){
-    FILE * fdsIn = fopen("input.txt", "r");
-    fprintf(stdout, "%d\n", fseek(fdsIn, 2, SEEK_CUR));
+int main()
+{
+    FILE *fdsIn = fopen("input.txt", "r");
+
+    // move offset
+    fseek(fdsIn, 8, SEEK_CUR);
+    char character;
+
+    // use ftell to get current fp location
+    printf("Move offset for string at position %ld, print: ", ftell(fdsIn));
+    while ((character = fgetc(fdsIn)) != '\n')
+    {
+        printf("%c", character);
+    }
+
+    rewind(fdsIn);
+    printf("\nRewind stream. Current position are %ld, print: ", ftell(fdsIn));
+    while ((character = fgetc(fdsIn)) != '\n')
+    {
+        printf("%c", character);
+    }
+
+    fflush(fdsIn);
+    fclose(fdsIn);
 }

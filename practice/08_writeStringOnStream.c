@@ -26,4 +26,5 @@ int main()
     }
 
     fprintf(stdout, "You wrote: %s", buffer);
+    fclose(fds);
 }
