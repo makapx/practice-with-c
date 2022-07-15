@@ -17,6 +17,14 @@ int main()
     struct stat fileStat;
     stat("input.txt", &fileStat);
 
+    //create sym link
+    struct stat fileSymStat;
+    struct stat linkStat;
+    symlink("input.txt", "symInput.txt");
+    stat("symInput.txt", &fileSymStat);
+    lstat("symInput.txt", &linkStat);
+
+
     // print file info
     printf("File mode: %d\n", fileStat.st_mode); // file permissions and mode
     printf("File size (in block): %ld \n", fileStat.st_blksize);
@@ -49,4 +57,30 @@ int main()
 
     printf("Is a socket file? ");
     (S_ISSOCK(fileStat.st_mode)) ? printf("Yes\n") : printf("No\n");
+
+    printf("\nPrint file info via link \n");
+    printf("File mode: %d\n", fileSymStat.st_mode);                 // file permissions and mode
+    printf("File size (in block): %ld \n", fileSymStat.st_blksize);
+    printf("File size (in block of 512 byte): %ld \n", fileSymStat.st_blocks);
+    printf("File size (in byte): %ld \n", fileSymStat.st_size);
+    printf("Hardlink counter: %ld \n", fileSymStat.st_nlink);
+    printf("User ID: %d \n", fileSymStat.st_uid);
+    printf("Group ID: %d \n", fileSymStat.st_gid);
+    printf("Filestytem ID: %ld \n", fileSymStat.st_dev);
+    printf("Last access timestamp: %ld \n", fileSymStat.st_atim.tv_sec);
+
+    printf("\nPrint link info\n");
+    printf("File mode: %d\n", linkStat.st_mode);                    // file permissions and mode
+    printf("File size (in block): %ld \n", linkStat.st_blksize);
+    printf("File size (in block of 512 byte): %ld \n", linkStat.st_blocks);
+    printf("File size (in byte): %ld \n", linkStat.st_size);
+    printf("Hardlink counter: %ld \n", linkStat.st_nlink);
+    printf("User ID: %d \n", linkStat.st_uid);
+    printf("Group ID: %d \n", linkStat.st_gid);
+    printf("Filestytem ID: %ld \n", linkStat.st_dev);
+    printf("Last access timestamp: %ld \n", linkStat.st_atim.tv_sec);
+
+    printf("Is a sym-link? ");
+    (S_ISLNK(linkStat.st_mode)) ? printf("Yes\n") : printf("No\n");
+
 }
