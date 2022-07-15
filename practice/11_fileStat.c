@@ -11,13 +11,14 @@
 #include <unistd.h>
 #include <sys/stat.h>
 
-int main(){
+int main()
+{
     // init stat struct for file info
     struct stat fileStat;
     stat("input.txt", &fileStat);
 
     // print file info
-    printf("File mode: %d\n", fileStat.st_mode);                       // file permissions and mode
+    printf("File mode: %d\n", fileStat.st_mode); // file permissions and mode
     printf("File size (in block): %ld \n", fileStat.st_blksize);
     printf("File size (in block of 512 byte): %ld \n", fileStat.st_blocks);
     printf("File size (in byte): %ld \n", fileStat.st_size);
@@ -30,6 +31,22 @@ int main(){
     // use macro to get file mode info
     printf("\nIs a directory? ");
     (S_ISDIR(fileStat.st_mode)) ? printf("Yes\n") : printf("No\n");
+
     printf("Has special char? ");
     (S_ISCHR(fileStat.st_mode)) ? printf("Yes\n") : printf("No\n");
+
+    printf("Is a queue? ");
+    (S_ISFIFO(fileStat.st_mode)) ? printf("Yes\n") : printf("No\n");
+
+    printf("Is a regular file? ");
+    (S_ISREG(fileStat.st_mode)) ? printf("Yes\n") : printf("No\n");
+
+    printf("Is a sym-link? ");
+    (S_ISLNK(fileStat.st_mode)) ? printf("Yes\n") : printf("No\n");
+
+    printf("Is a special file? ");
+    (S_ISBLK(fileStat.st_mode)) ? printf("Yes\n") : printf("No\n");
+
+    printf("Is a socket file? ");
+    (S_ISSOCK(fileStat.st_mode)) ? printf("Yes\n") : printf("No\n");
 }
