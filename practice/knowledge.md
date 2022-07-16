@@ -11,3 +11,9 @@
 - `strtok()` has internal state
 
 - pw_passwd in struct passwd is x if password is encrypted and located in /etc/shadows
+
+- import \_GNU_SOURCE before including mman header
+
+- do ftruncate BEFORE mapped output file
+
+- use MAP_SHARED flag for mapped output file

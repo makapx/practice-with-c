@@ -27,6 +27,10 @@
 
 13. [Hard-link and softlink](./practice/13_link.c)
 
+#### Memory-mapped file
+
+14. [Memory mapped file - mmap, munmap, mremap](./practice/14_mappedFile.c)
+
 ### Homeworks
 
 1. [Homework 1 - create a 'move'](./homeworks/homework01/homework01.c)
