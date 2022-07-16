@@ -30,3 +30,4 @@
 ### Homeworks
 
 1. [Homework 1 - create a 'move'](./homeworks/homework01/homework01.c)
+2. [Homework 2 - cross file-system move, sym-link move](./homeworks/homework02/homework02.c)
