@@ -40,6 +40,12 @@
 16. [Process - fork()](./practice/16_process.c)
 17. [Process - execv(), execl()](./practice/17_exec.c)
 
+#### IPC
+
+##### Pipe
+
+18. [Pipe](./practice/18_pipe.c)
+
 ### Homeworks
 
 1. [Homework 1 - create a 'move'](./homeworks/homework01/homework01.c)
