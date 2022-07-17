@@ -31,6 +31,10 @@
 
 14. [Memory mapped file - mmap, munmap, mremap](./practice/14_mappedFile.c)
 
+#### Directory
+
+15. [Work with directory](./practice/15_directory.c)
+
 ### Homeworks
 
 1. [Homework 1 - create a 'move'](./homeworks/homework01/homework01.c)
