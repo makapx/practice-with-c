@@ -17,3 +17,5 @@
 - do ftruncate BEFORE mapped output file
 
 - use MAP_SHARED flag for mapped output file
+
+- remember to close pipe channels

@@ -46,6 +46,10 @@
 
 18. [Pipe](./practice/18_pipe.c)
 
+##### Named pipe - FIFO queue
+
+19. [Named pipe - FIFO queue](./practice/19_namedPipe.c)
+
 ### Homeworks
 
 1. [Homework 1 - create a 'move'](./homeworks/homework01/homework01.c)
