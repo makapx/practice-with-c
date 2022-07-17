@@ -31,9 +31,14 @@
 
 14. [Memory mapped file - mmap, munmap, mremap](./practice/14_mappedFile.c)
 
-#### Directory
+#### Directories
 
 15. [Work with directory](./practice/15_directory.c)
+
+#### Processes
+
+16. [Process - fork()](./practice/16_process.c)
+17. [Process - execv(), execl()](./practice/17_exec.c)
 
 ### Homeworks
 
